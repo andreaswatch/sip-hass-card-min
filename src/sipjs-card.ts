@@ -53,14 +53,14 @@ class SipJsCard extends LitElement {
     static get styles() {
         return css `
             .wrapper {
-                padding: 8px;
+                padding: 0px;
                 padding-top: 0px;
-                padding-bottom: 2px;
+                padding-bottom: 0px;
             }
             .flex {
                 flex: 1;
-                margin-top: 6px;
-                margin-bottom: 6px;
+                margin-top: 0px;
+                margin-bottom: 0px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -74,8 +74,8 @@ class SipJsCard extends LitElement {
             .info {
                 flex: 1 1 30%;
                 cursor: pointer;
-                margin-left: 16px;
-                margin-right: 8px;
+                margin-left: 0px;
+                margin-right: 0px;
             }
             ha-card {
                 cursor: pointer;
@@ -97,9 +97,9 @@ class SipJsCard extends LitElement {
             }
             video {
                 display: block;
-                min-height: 20em;
-                height: 100%;
-                width: 100%;
+                max-height: 0px;
+                height: 0px;
+                width: 0px;
             }
             .visualizer-container {
                 position: absolute;
@@ -113,7 +113,7 @@ class SipJsCard extends LitElement {
             .visualizer-bar {
                 display: inline-block;
                 background: white;
-                margin: 0 2px;
+                margin: 0 0px;
                 width: 25px;
                 min-height: 5px;
             }
@@ -130,19 +130,19 @@ class SipJsCard extends LitElement {
                   --ha-picture-card-background-color,
                   rgba(0, 0, 0, 0.3)
                 );
-                padding: 4px 8px;
-                font-size: 16px;
-                line-height: 40px;
+                padding: 0px 0px;
+                font-size: 0px;
+                line-height: 0px;
                 color: var(--ha-picture-card-text-color, white);
                 display: flex;
                 justify-content: space-between;
                 flex-direction: row;
-                margin-top: -70px;
-                min-height: 62px;
+                margin-top: 0px;
+                max-height: 0px;
             }
             .box .title {
-                font-weight: 500;
-                margin-left: 8px;
+                font-weight: 0;
+                margin-left: 0px;
             }
             .row {
                 display: flex;
@@ -150,7 +150,7 @@ class SipJsCard extends LitElement {
             }
             .container {
                 transition: filter 0.2s linear 0s;
-                width: 80vw;
+                width: 0px;
             }
             .box, ha-icon {
                 display: flex;
@@ -163,13 +163,13 @@ class SipJsCard extends LitElement {
                 color: var(--label-badge-red);
             }
             #time, .title {
-                margin-right: 8px;
+                margin-right: 0px;
                 display: flex;
                 align-items: center;
             }
             ha-camera-stream {
                 height: auto;
-                width: 100%;
+                width: 0px;
                 display: block;
             }
 
@@ -185,8 +185,8 @@ class SipJsCard extends LitElement {
                 flex-grow: 0;
                 flex-shrink: 0;
                 box-sizing: border-box;
-                max-width: 100%;
-                max-height: 100%;
+                max-width: 0px;
+                max-height: 0px;
                 pointer-events: auto;
                 overflow-y: auto;
             }
@@ -197,8 +197,8 @@ class SipJsCard extends LitElement {
                 align-items: center;
                 justify-content: space-around;
                 box-sizing: border-box;
-                height: 100%;
-                transform: scale(0.8);
+                height: 0px;
+                transform: scale(0);
                 opacity: 0;
                 pointer-events: none;
             }
@@ -208,7 +208,7 @@ class SipJsCard extends LitElement {
             }
 
             ha-dialog[data-domain="camera"] .content, ha-dialog[data-domain="camera"] ha-header-bar {
-                width: auto;
+                width: 0px;
             }
 
             ha-dialog {
@@ -221,8 +221,8 @@ class SipJsCard extends LitElement {
             }
 
             #audioVisualizer {
-                min-height: 20em;
-                height: 100%;
+                max-height: 0px;
+                height: 0px;
                 white-space: nowrap;
                 align-items: center;
                 display: flex;
@@ -231,8 +231,8 @@ class SipJsCard extends LitElement {
 
             #audioVisualizer div {
                 display: inline-block;
-                width: 3px;
-                height: 100px;
+                width: 0px;
+                height: 0px;
                 margin: 0 7px;
                 background: currentColor;
                 transform: scaleY( .5 );
@@ -288,10 +288,10 @@ class SipJsCard extends LitElement {
             .header-text {
                 -webkit-font-smoothing: antialiased;
                 font-family: var(--mdc-typography-headline6-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
-                font-size: var(--mdc-typography-headline6-font-size, 1.25rem);
-                line-height: var(--mdc-typography-headline6-line-height, 2rem);
-                font-weight: var(--mdc-typography-headline6-font-weight, 500);
-                letter-spacing: var(--mdc-typography-headline6-letter-spacing, 0.0125em);
+                font-size: 0px;
+                line-height: 0px;
+                font-weight: 0;
+                letter-spacing: 0px;
                 text-decoration: var(--mdc-typography-headline6-text-decoration, inherit);
                 text-transform: var(--mdc-typography-headline6-text-transform, inherit);
                 padding-left: 20px;
@@ -342,7 +342,7 @@ class SipJsCard extends LitElement {
                 </style>
                 <div class="popup">
                     <div slot="heading" class="heading">
-                        <ha-header-bar>
+                        <!--<ha-header-bar>
                             <ha-icon-button
                                 style="--mdc-icon-button-size: 48px; --mdc-icon-size: 23px;"
                                 @click="${() => this.closePopup()}"
@@ -352,7 +352,7 @@ class SipJsCard extends LitElement {
                             </ha-icon-button>
                             <span slot="title" id="name" class="header-text">${this.callStatus}</span>
                             <span slot="actionItems" id="time" class="header-text">${this.timerElement}</span>
-                        </ha-header-bar>
+                        </ha-header-bar>-->
                     </div>
                     <div class="content"> 
                         ${this.currentCamera !== undefined ? html`
