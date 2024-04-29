@@ -1,7 +1,7 @@
 {
-  "name": "ha-sip",
+  "name": "ha-sip-min",
   "version": "1.0.0",
-  "description": "A SIP client inside home assistant!",
+  "description": "A mini SIP client inside home assistant!",
   "main": "sipjs-card.js",
   "scripts": {
     "build": "webpack --progress --config webpack.config.js --mode production"
@@ -14,12 +14,13 @@
     "sip",
     "home-assistant"
   ],
-  "author": "Jordy Kuhne",
+  "author": "Jordy Kuhne + (andreaswatch)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TECH7Fox/HA-SIP/issues"
+    "url": "https://github.com/andreaswatch/sip-hass-card-min/issues"
   },
-  "homepage": "https://github.com/TECH7Fox/HA-SIP#readme",
+  "homepage": "https://github.com/andreaswatch/sip-hass-card-min#readme",
   "devDependencies": {
     "ts-loader": "^9.2.7",
     "tslib": "^2.3.1",
