@@ -1,3 +1,8 @@
+
+Please use the original card.
+This repository is a fork that hides everything visual.
+
+
 # sip-hass-card
 **A SIP client inside home assistant!**
 
