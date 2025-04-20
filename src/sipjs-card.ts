@@ -765,7 +765,11 @@ class SipJsCard extends LitElement {
         this.sipPhone = new UA(configuration);
 
         this.sipCallOptions = {
-            mediaConstraints: { audio: true, video: this.config.video },
+            mediaConstraints: { audio: {
+      echoCancellation: true, // explicitly enable
+      noiseSuppression: true, // recommended
+      autoGainControl: true   // recommended
+    }, video: this.config.video },
             rtcOfferConstraints: { offerToReceiveAudio: true, offerToReceiveVideo: this.config.video },
             pcConfig: this.config.iceConfig // we just use the config that directly comes from the YAML config in the YAML card config.
             /* EXAMPLE config
